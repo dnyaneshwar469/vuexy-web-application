@@ -1,0 +1,129 @@
+.vuexy-sidebar{
+    width: 260px;
+    height: 100vh;
+    .vuexy-logo-container{
+        // width: 50px;
+        // height: auto;
+        padding: 1rem;
+        .navbar-brand{
+            display: flex;
+            align-items: center;
+        }
+        .brand-logo{
+            max-width: 36px;
+        }
+        .brand-text{
+            color: #7367f0;
+            padding-left: 1rem;
+            margin-bottom: 0;
+            font-weight: 600;
+            letter-spacing: .01rem;
+            font-size: 1.45rem;
+        }
+    }
+
+    .main-menu-content{
+        // height: calc(100% - 4.45rem)!important;
+        position: relative;
+    }
+}
+.main-menu-content ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main-menu-content{
+    .navigation-main {
+        li.has-sub a.nav-anchor{
+            margin: 0 15px;
+            transition: all .5s ease,background 0s,color 0s;
+            padding-top: 0.70rem;
+            padding-bottom: 0.70rem;
+            border-radius: 4px;
+            svg {
+                height: 20px;
+                width: 20px;
+                font-size: 1.45rem;
+                margin-right: 1.1rem;
+                flex-shrink: 0;
+            }
+        }
+        .text-truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }  
+        .badge.badge-light-warning {
+            background-color: rgba(255,159,67,.12);
+            color: #ff9f43!important;
+        }
+
+        li.has-dropdown>a:after {
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236e6b7b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: 1.1rem;
+            height: 1.1rem;
+            width: 1.1rem;
+            display: inline-block;
+            position: absolute;
+            right: 20px;
+            top: 14px;
+            transform: rotate(0deg);
+            transition: all .2s ease-out;
+        }
+        li.has-sub>a:not(.collapsed):after {
+            transform: rotate(90deg) !important;
+        }
+    }  
+}
+.navigation li.nav-item a:hover>*, .navigation li.nav-item ul.menu-content li a:hover>* .text-subspan {
+    transition: transform .25s ease !important;
+    transform: translateX(5px) !important;
+}
+
+.menu-content{
+    li:first-child{
+        margin-top: 7px !important;
+    }
+}
+.menu-content>li>a svg {
+    margin-right: 1.45rem;
+    font-size: 11px;
+    height: 11px;
+    width: 11px;
+}
+.navigation>li>ul li:not(.has-sub) {
+    margin: 0 15px;
+    // padding: 7.5px 0;
+}
+.navigation li .active {
+    background: linear-gradient(118deg,#7367f0,rgba(115,103,240,.7));
+    box-shadow: 0 0 10px 1px rgb(115 103 240 / 70%);
+    border-radius: 4px;
+    z-index: 1;
+    color: var(--color-white-v1) !important;
+}
+.navigation>li ul li>a {
+    padding: 10px 15px 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.main-menu-content-parent{
+    height: calc(100% - 4.45rem)!important;
+    overflow: auto;
+}
+.sidebar-subheading{
+    padding: 0 32px;
+    margin-top: 2.286rem;
+}
+.sidebar-subheading>p{
+    font-size: 0.8rem;
+    line-height: 1.5;
+    letter-spacing: .01rem;
+}
+.child-anchor{
+    margin: 0 15px;
+}

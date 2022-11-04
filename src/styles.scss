@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import"./assets/scss/main";
+@import"./assets/scss/auth";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+body{
+    font-family: 'Montserrat', sans-serif !important;
+}
+:root{
+    --bg-blue-v1: #161d31;
+    --bg-blue-v2: #283046;
+    --bg-blue-v3: rgba(115,103,240,.12);
+    --bg-blue-v4: #7367f0;
+    --bg-blue-v5: #404656;
+    --bg-blue-v6: #3b4253;
+    --color-white-v1: #ffffff;
+    --color-white-v2: #d0d2d6;
+    --color-white-v3: #b4b7bd;
+    --color-white-v4: #d8d6de;
+    --color-white-v5: #ebe9f1;
+    --color-white-v6: #f8f8f8;
+    --color-white-v7: #f5f5f5;
+    --color-dark-v1: #000000;
+    --color-dark-v2: #625f6e;
+    --color-dark-v3: #6e6b7b;
+    --color-dark-v4: #5e5873;
+    --color-dark-v5: #a6a4b0;;
+
+}

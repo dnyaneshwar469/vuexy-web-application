@@ -1,0 +1,47 @@
+{
+  "user": [
+    {
+      "userName": "Pritesh",
+      "email": "priteshhh469@gmail.com",
+      "password": "Htcdesire@820",
+      "id": 1
+    },
+    {
+      "userName": "Akshata",
+      "email": "akshata@gmail.com",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "email": "priteshhh1994@gmail.com",
+      "password": "Htcdesire@820",
+      "id": 3
+    },
+    {
+      "query": "",
+      "id": 4
+    },
+    {
+      "query": "",
+      "id": 5
+    },
+    {
+      "userName": "Dnyaneshwar",
+      "email": "londhepatildb@gmail.com",
+      "password": "12345678",
+      "id": 6
+    },
+    {
+      "userName": "Ashish",
+      "email": "ashish@gmail.com",
+      "password": "12345678",
+      "id": 7
+    },
+    {
+      "userName": "tushar",
+      "email": "tushar@gmail.com",
+      "password": "12345",
+      "id": 8
+    }
+  ]
+}

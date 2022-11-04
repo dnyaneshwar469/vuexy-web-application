@@ -1,0 +1,206 @@
+.main-body-container{
+    display: flex;
+}
+.main-container{
+    width: calc(100vw - (100vw - 100%) - calc(2rem * 2) - 260px);
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-body-parent{
+    padding: 7rem 1.75rem 3vw;
+    height: 100vh;
+    overflow: hidden auto;
+    .card-style{
+        padding: 1.2rem 1.6rem;
+        background-clip: border-box;
+        border-radius: 0.428rem;
+    }
+}
+.cal-month-view{
+    background-color: transparent !important;
+    // border-right: 0.05px solid;
+    .cal-cell-row{
+        &:hover{
+            background-color: unset !important;
+        }
+        .cal-cell{
+            font-weight: 500 !important;
+            &:hover{
+                background-color: unset !important;
+            }
+        }
+    }
+    .cal-day-cell {
+        @media (min-width: 1920px){
+            min-height: 158px !important;
+        }
+    }
+    .cal-day-cell.cal-today .cal-day-number{
+        font-size: 0.9rem !important;
+    }
+    .cal-day-cell:not(:last-child) {
+        border-right: 0.05px solid !important;
+    }
+    .cal-cell-row {
+        border-bottom: 0.05px solid !important;
+    }
+     .cal-days {
+        border: 0 !important;
+    }
+    .cal-day-number {
+        font-size: 0.9rem !important;
+        font-weight: 400 !important;
+        opacity: 0.5 !important;
+        margin-top: 15px !important;
+        margin-left: 15px !important;
+        float: left !important;
+        margin-bottom: 10px !important;
+    }
+
+}
+
+// Dark Theme
+
+.dark-layout {
+    color: #b4b7bd;
+    background-color: var(--bg-blue-v1);
+}
+.dark-layout .dropdown-menu {
+    background-color: var(--bg-blue-v2);
+    -webkit-box-shadow: 0 4px 24px 0 rgb(0 0 0 / 24%);
+    box-shadow: 0 4px 24px 0 rgb(0 0 0 / 24%);
+}
+.dark-layout .vuexy-sidebar{
+    background-color: var(--bg-blue-v2);
+}
+.dark-layout .main-menu-content .navigation-main {
+    background-color: var(--bg-blue-v2);
+}
+.dark-layout .main-menu-content .navigation-main li a {
+    color: var(--color-white-v2)!important;
+}
+.dark-layout .navigation-dropdown>li.has-sub>a:not(.collapsed){
+    background-color: var(--bg-blue-v1);
+}
+.dark-layout .child-navigation-dropdown>li.has-sub>a:not(.collapsed){
+    background-color: var(--bg-blue-v1);
+}
+.dark-layout .card-main-bg{
+    background-color: var(--bg-blue-v2);
+    -webkit-box-shadow: 0 4px 24px 0 rgb(34 41 47 / 24%);
+    box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+    color: var(--color-white-v2);
+}
+.dark-layout .right-side-navbar .text-body {
+    color: var(--color-white-v2) !important;
+}
+.dark-layout .right-side-navbar .admin-dropdown-menu li .dropdown-item {
+    color: var(--color-white-v3);
+}
+.dark-layout .navbar-container .navbar-nav .nav-item .nav-link {
+    color: var(--color-white-v2);
+}
+.dark-layout .right-side-navbar .nav-link svg {
+    color: var(--color-white-v2);
+}
+.dark-layout .right-side-navbar .navbar-li .text-decoration-none {
+    color: var(--color-white-v2);
+}
+.dark-layout .sidebar-subheading>p{
+    color: var(--color-dark-v5);
+}
+.dark-layout .cal-month-view .cal-day-cell.cal-today {
+    background-color: var(--bg-blue-v1);
+}
+.dark-layout .cal-day-cell:not(:last-child) {
+    border-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .cal-cell-row {
+    border-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .calender-parent{
+    border-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .calender-right-col{
+    border-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .month-week-day-row{
+    border-color: var(--bg-blue-v6) !important;
+}
+// .dark-layout .auth-body{
+//     background-color: var(--bg-blue-v1);
+// }
+// .dark-layout .auth-right-section {
+//     background: var(--bg-blue-v2);
+// }
+
+// light Theme
+.light-content {
+    color: #b4b7bd;
+    background-color: var(--color-white-v6);
+}
+.light-content .vuexy-sidebar{
+    background-color: var(--color-white-v1);
+}
+.light-content .main-menu-content .navigation-main {
+    background-color: var(--color-white-v1);
+}
+.light-content .navigation-dropdown>li.has-sub>a:not(.collapsed){
+    background-color: var(--color-white-v7);
+}
+.light-content .child-navigation-dropdown>li.has-sub>a:not(.collapsed){
+    background-color: var(--color-white-v7);
+}
+.light-content .main-menu-content .navigation-main li a {
+    color: var(--color-dark-v2)!important;
+}
+.light-content .dropdown-menu {
+    background-color: var(--color-white-v1);
+    -webkit-box-shadow: 0 5px 25px rgb(34 41 47 / 10%);
+    box-shadow: 0 5px 25px rgb(34 41 47 / 10%);
+}
+.light-content .card-main-bg{
+    background-color: var(--color-white-v1);
+    -webkit-box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+    box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+    color: var(--color-dark-v4);
+}
+.light-content .right-side-navbar .text-body {
+    color: var(--color-dark-v3) !important;
+}
+.light-content .right-side-navbar .admin-dropdown-menu li .dropdown-item {
+    color: var(--color-dark-v3);
+}
+.light-content .navbar-container .navbar-nav .nav-item .nav-link {
+    color: var(--color-dark-v3);
+}
+.light-content .right-side-navbar .nav-link svg {
+    color: var(--color-dark-v3);
+}
+.light-content .right-side-navbar .navbar-li .text-decoration-none {
+    color: var(--color-dark-v3);
+}
+.light-content .cal-month-view .cal-day-cell.cal-today {
+    background-color: var(--color-white-v6);
+}
+.light-content .cal-day-cell:not(:last-child) {
+    border-color: var(--color-white-v5) !important;
+}
+.light-content .cal-cell-row {
+    border-color: var(--color-white-v5) !important;
+}
+.light-content .calender-parent{
+    border-color: var(--color-white-v5) !important;
+}
+.light-content .calender-right-col{
+    border-color: var(--color-white-v5) !important;
+}
+.light-content .month-week-day-row{
+    border-color: var(--color-white-v5) !important;
+}
+// .light-content .auth-body{
+//     background-color: var(--color-white-v6);
+// }
+// .light-content .auth-right-section {
+//     background: var(--color-white-v1);
+// }

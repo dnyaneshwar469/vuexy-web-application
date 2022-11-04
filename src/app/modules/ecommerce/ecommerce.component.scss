@@ -1,0 +1,98 @@
+.ecommerce-parent{
+    // padding: 7rem 1.75rem 3vw;
+    // height: 100vh;
+    // overflow: hidden auto;
+    .card-headeing{
+        // color: var(--color-white-v2);
+        font-weight: 600;
+    }
+    .card-text{
+        font-size: 14px;
+    }
+    .total-sales-revenue{
+        color: #7367f0;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+    .btn-primary{
+        border-color: #7367f0!important;
+        background-color: #7367f0!important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        font-weight: 500;
+    }
+    .gold-badge-div{
+        position: absolute;
+        top: 0;
+        right: 2.5vw;
+        width: 4vw;
+        height: auto;
+    }
+    .static-heading{
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    .update-text{
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .statistics-media-parent{
+        display: flex;
+        align-items: center;
+        margin-top: 3vw;
+        .stat-icon-div{
+            width: 2.75vw;
+            height: 2.75vw;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sales-bg{
+            background-color: rgba(115,103,240,.12);
+            color: #7367f0;
+        }
+        .customers-bg{
+            background-color: rgba(0,207,232,.12);
+            color: #00cfe8;
+        }
+        .products-bg{
+            background-color: rgba(234,84,85,.12);
+            color: #ea5455;
+        }
+        .revenue-bg{
+            background-color: rgba(40,199,111,.12);
+            color: #28c76f;
+        }
+        .stat-media-right{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .stat-media-heading{
+                font-weight: 600;
+                font-size: 1.286rem;
+                line-height: 1.5;
+            }
+            .stat-media-text{
+                font-size: 14px;
+                line-height: 1.15;
+            }
+        }
+    }
+
+    .orders-profite-heading{
+        font-size: 1rem;
+    }
+    .font-weight-bolder{
+        font-size: 1.714rem;
+        font-weight: 600;
+    }
+}
+.apx-legend-position-bottom{
+    display: none;
+}

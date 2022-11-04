@@ -1,0 +1,141 @@
+.navbar-style{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 260px;
+    margin-top: 1.3rem;
+    width: calc(100vw - (100vw - 100%) - calc(1.75rem * 2) - 260px);
+    border-radius: 0.428rem;
+    z-index: 12;
+    margin-left: auto;
+    margin-right: auto;
+}
+.navbar-container ul.navbar-nav li svg.ficon {
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1.5rem;
+    // color: #6e6b7b;
+}
+.navbar-container{
+    padding: 0.4rem 1.4rem;
+    flex-basis: 100%;
+    transition: all .3s ease;
+    margin-left: 0;
+    .navbar-nav{
+        .nav-item{
+            .nav-link{
+                background-color: transparent;
+            }
+        }
+    }
+}
+.main-container{
+    .navbar-style{
+        display: flex;
+        align-items: center;
+    }
+}
+.right-side-navbar{
+    margin-left: auto;
+    padding: 0.4rem 1.4rem;
+    .navbar-li{
+        line-height: 1.2;
+    }
+    .profile-dropdown-parent{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .profile-img-div{
+            // width: 3.5vw;
+            width: 40px;
+            // height: 3.5vw;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .profile-name-div{
+
+            .profile-name{
+                font-weight: 600;
+                font-size: 16px;
+            }
+            .user-status{
+                font-size: 12px;
+                float: right;
+            }
+        }
+    }
+    .admin-dropdown-menu{
+        left: -3.25rem;
+        width: 11.5rem;
+        li{
+            line-height: 1.5;
+            .dropdown-item {
+                width: auto;
+                padding: 0.65rem 1.28rem;
+                clear: both;
+                text-align: inherit;
+                background-color: transparent;
+                border: 0;
+                &:hover {
+                    color: #7367f0;
+                    background: rgba(115,103,240,.12);
+                }
+                svg {
+                    height: 16px;
+                    width: 16px;
+                    font-size: 16px;
+                    vertical-align: top;
+                    margin-right: 0.5rem !important;
+                }
+            }
+            .dropdown-divider {
+                border-color: #3b4253;
+                margin: 0.5rem 0;
+            }
+        }
+    }
+    .nav-link{
+        padding: 0 0.5rem;
+    }
+}
+ul.navbar li.dropdown .dropdown-menu {
+    top: 48px!important;
+    margin-top: 10px;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+}
+.dropdown-toggle{
+    &::after{
+        display: none;
+    }
+}
+.input-toggle input {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.input-toggle .nav-link{
+    cursor: pointer;
+}
+
+@keyframes slideIn{
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+    0% {
+        -webkit-transform: translateY(1rem);
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+}

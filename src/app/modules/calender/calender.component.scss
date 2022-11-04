@@ -1,0 +1,58 @@
+.btn-primary{
+    border-color: #7367f0 !important;
+    background-color: #7367f0 !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    &:hover{
+        box-shadow: 0 8px 25px -8px #7367f0;
+    }
+}
+.btn-primary-cal{
+    // background-color: rgba(115,103,240,.2)!important;
+    background-color: transparent;
+    border-color: #7367f0!important;
+    color: #7367f0;
+    padding: 0.55rem 1.5rem;
+    font-size: 0.9rem;
+    &:hover{
+        background-color: rgba(115,103,240,.2)!important;
+    }
+}
+.activeBtn{
+    background-color: rgba(115,103,240,.2)!important;
+}
+.month-week-day-row{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 1.6rem;
+    border-bottom: 0.5px solid;
+}
+.calender-border{
+    border: 0.5px solid;
+    border-radius: 0.428rem;
+    .calender-left-col{
+        // padding: 1.2rem 1.6rem;
+        padding: 1.2rem 1vw;
+    }
+    .calender-right-col{
+        // padding: 1.2rem 1.6rem;
+        border-left: 0.5px solid;
+    }
+}
+.pre-next-btn{
+    &:focus{
+        border: none;
+        box-shadow: none;
+    }
+    &:hover{
+        border: none;
+        box-shadow: none;
+    }
+}
+.pre-next-btn svg{
+    color: var(--color-dark-v3);
+    fill: var(--color-dark-v3);
+}
