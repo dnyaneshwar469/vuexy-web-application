@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { AuthService } from '../../service/auth.service';
 import { UsersService } from '../../service/user.service';
+import { map } from 'rxjs/operators'
 declare var $: any;
 
 @Component({
@@ -12,7 +13,8 @@ declare var $: any;
 export class NavbarComponent implements OnInit {
 
   screenMode : any ='dark';
-  getUserName: any = {};
+  getUserName: any = [];
+  usersList: any = [];
   getUserLocal:any;
 
   constructor( private authService: AuthService,
@@ -40,16 +42,27 @@ export class NavbarComponent implements OnInit {
       $('#mainContainer').removeClass('dark-layout');
     }
 
-    this.userService.getUser()
-    .subscribe((res:any) => {
-        this.getUserName = res.find((a: any)=>{
+    this.authService.signin()
+    .pipe(map((responseData: any) =>{
+      // const usersList = [];
+      for(const key in responseData){
+        if(responseData.hasOwnProperty(key)){
+          this.usersList.push({...responseData[key], id: key})
+        }
+      };
+      return this.usersList;
+    }))
+    .subscribe((responseData:any) => {
+        this.getUserName = responseData.find((a: any)=>{
           this.getUserLocal = JSON.parse(localStorage.getItem('authToken')!)
           console.log(this.getUserLocal.email)
           if( a.email === this.getUserLocal.email && a.password === this.getUserLocal.password){
+            console.log(a.userName)
             return a.userName;
           }
         });
-        console.log(this.getUserName);
+        console.log(responseData);
+        
       })
 
 

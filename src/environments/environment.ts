@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'http://localhost:3000/user'
-  // serverUrl: 'https://vuexy-59521-default-rtdb.firebaseio.com/'
+  // serverUrl: 'http://localhost:3000/user'
+  serverUrl: 'https://vuexy-59521-default-rtdb.firebaseio.com/'
 };
 
 /*

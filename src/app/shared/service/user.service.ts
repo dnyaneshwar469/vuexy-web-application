@@ -23,7 +23,7 @@ export class UsersService {
   }
 
   getUser() {
-    return this.http.get(`${this.serverUrl}`, this.getHeader())
+    return this.http.get(`${this.serverUrl}/users.json`, this.getHeader())
       .pipe(map(response => response));
   }
   // signin(userData: any) {

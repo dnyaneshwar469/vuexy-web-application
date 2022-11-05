@@ -65,7 +65,7 @@ export class SigninComponent implements OnInit {
     console.log(this.userData);
     this.setItem();
 
-    this.authService.signin(this.userData)
+    this.authService.signin()
     .pipe(map((responseData: any) =>{
       const usersList = [];
       for(const key in responseData){
@@ -73,7 +73,6 @@ export class SigninComponent implements OnInit {
           usersList.push({...responseData[key], id: key})
         }
       }
-      console.log(usersList)
       return usersList;
     }))
     .subscribe( (data: any)=>{
@@ -88,26 +87,10 @@ export class SigninComponent implements OnInit {
       }else{
         this.err = true;
       }
-    }, err => {
-      this.err = true;
-      console.log(err);
     });
   }
   setItem(){
     const stringData = JSON.stringify(this.userData);
     return localStorage.setItem('authToken', stringData);
-  }
-
-  proceedSignin(){
-    if(this.signinForm.valid){
-      this.authService.signup(this.signinForm.value).subscribe((result:any)=>{
-        if(result != null){
-          this.responseData = result;
-          localStorage.setItem("authToken", this.responseData.id);
-          this.router.navigate(['/signin'])
-        }
-      })
-    }
-    
   }
 }

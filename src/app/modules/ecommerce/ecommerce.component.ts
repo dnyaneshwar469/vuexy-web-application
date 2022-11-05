@@ -13,6 +13,8 @@ import {
   ApexLegend,
   ApexFill
 } from "ng-apexcharts";
+import { AuthService } from 'src/app/shared/service/auth.service';
+import { map } from 'rxjs/operators'
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -31,7 +33,8 @@ export type ChartOptions = {
   styleUrls: ['./ecommerce.component.scss']
 })
 export class EcommerceComponent implements OnInit {
-  getUserName: any = {};
+  getUserName: any = [];
+  usersList: any = [];
   getUserLocal:any;
 
   @ViewChild("chart") chart:any | ChartComponent;
@@ -52,7 +55,8 @@ export class EcommerceComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private userService: UsersService
+    private userService: UsersService,
+    private authService: AuthService
   ) { 
     this.chartOptions = {
       series: [...this.data],
@@ -114,15 +118,37 @@ export class EcommerceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe((res:any) => {
-      this.getUserName = res.find((a: any)=>{
-        this.getUserLocal = JSON.parse(localStorage.getItem('authToken')!)
-        console.log(this.getUserLocal.email)
-        if( a.email === this.getUserLocal.email && a.password === this.getUserLocal.password){
-          return a.userName;
+    // this.userService.getUser().subscribe((res:any) => {
+    //   this.getUserName = res.find((a: any)=>{
+    //     this.getUserLocal = JSON.parse(localStorage.getItem('authToken')!)
+    //     console.log(this.getUserLocal.email)
+    //     if( a.email === this.getUserLocal.email && a.password === this.getUserLocal.password){
+    //       return a.userName;
+    //     }
+    //   });
+    //   console.log(this.getUserName);
+    // })
+
+    this.authService.signin()
+    .pipe(map((responseData: any) =>{
+      // const usersList = [];
+      for(const key in responseData){
+        if(responseData.hasOwnProperty(key)){
+          this.usersList.push({...responseData[key], id: key})
         }
-      });
-      console.log(this.getUserName);
-    })
+      };
+      return this.usersList;
+    }))
+    .subscribe((responseData:any) => {
+        this.getUserName = responseData.find((a: any)=>{
+          this.getUserLocal = JSON.parse(localStorage.getItem('authToken')!)
+          console.log(this.getUserLocal.email)
+          if( a.email === this.getUserLocal.email && a.password === this.getUserLocal.password){
+            return a.userName;
+          }
+        });
+        console.log(responseData);
+        
+      })
   }
 }

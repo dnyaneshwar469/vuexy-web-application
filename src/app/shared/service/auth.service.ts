@@ -12,12 +12,12 @@ export class AuthService {
   constructor(private http : HttpClient,
     private router: Router) { }
 
-  signin(userData: any){
-    return this.http.get(`${this.serverUrl}`, userData)
+  signin(){
+    return this.http.get(`${this.serverUrl}/users.json`)
   }
 
   signup(userData: any) {
-    return this.http.post(`${this.serverUrl}`, userData);
+    return this.http.post(`${this.serverUrl}/users.json`, userData);
   }
 
   isSignin(){

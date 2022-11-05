@@ -52,8 +52,8 @@ export class SignupComponent implements OnInit {
   get f(){ return this.signupForm.controls };
 
   submit(){
-    this.submitted = true;
-    // this.err = true;
+    this.submitted = true; 
+
     if(this.signupForm.invalid){
       return;
     }
@@ -69,18 +69,18 @@ export class SignupComponent implements OnInit {
     // this.setUser()
     this.authService.signup(this.userData)
     .subscribe((data:any)=>{
-      localStorage.setItem('authToken',JSON.stringify(data));
+      // localStorage.setItem('authToken',JSON.stringify(data));
       this.router.navigate(['/signin']);
     }, err => {
       this.err = true;
       console.log(err);
     })
 
-    this.setItem();
+    // this.setItem();
   }
 
-  setItem(){
-    localStorage.setItem('authToken', JSON.stringify(this.userData));
-    return;
-  }
+  // setItem(){
+  //   localStorage.setItem('authToken', JSON.stringify(this.userData));
+  //   return;
+  // }
 }
