@@ -1,0 +1,23 @@
+.modal.show .modal-dialog {
+    transform: translateX(0px);
+    display: block !important;
+}
+.fade:not(.show) {
+    opacity: 1 !important;
+}
+.fade.show {
+    opacity: 1 !important;
+}
+.modal{
+    display: block !important;
+}
+.modal .modal-dialog {
+    transform: translateX(30rem);
+}
+.modal-dialog {
+    margin: 0 0 0 auto;
+    height: 100%;
+}
+.modal-content{
+    height: 100%;
+}

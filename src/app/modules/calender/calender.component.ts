@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarView } from 'angular-calendar';
+import { DialogService } from 'src/app/shared/service/dialog';
+import { AddEventComponent } from 'src/app/shared/dialog/add-event/add-event.component';
 declare var $: any;
 
 @Component({
@@ -11,7 +13,7 @@ export class CalenderComponent implements OnInit {
 
   // view: any = false;
 
-  constructor() { }
+  constructor(private dialogService: DialogService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +25,13 @@ export class CalenderComponent implements OnInit {
 
   setView(view: CalendarView) {
     this.view = view;
+  }
+
+  addEventDialog(){
+    this.dialogService.openModal(AddEventComponent, {cssClass: 'modal-md', context: {data: {}, title: 'Add New Plan'}})
+    .instance.close.subscribe((data: any) => {
+      
+      });
   }
 
 }

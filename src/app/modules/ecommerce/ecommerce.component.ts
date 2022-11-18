@@ -130,15 +130,6 @@ export class EcommerceComponent implements OnInit {
     // })
 
     this.authService.signin()
-    .pipe(map((responseData: any) =>{
-      // const usersList = [];
-      for(const key in responseData){
-        if(responseData.hasOwnProperty(key)){
-          this.usersList.push({...responseData[key], id: key})
-        }
-      };
-      return this.usersList;
-    }))
     .subscribe((responseData:any) => {
         this.getUserName = responseData.find((a: any)=>{
           this.getUserLocal = JSON.parse(localStorage.getItem('authToken')!)

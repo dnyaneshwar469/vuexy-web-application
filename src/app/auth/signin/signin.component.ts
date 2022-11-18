@@ -66,15 +66,6 @@ export class SigninComponent implements OnInit {
     this.setItem();
 
     this.authService.signin()
-    .pipe(map((responseData: any) =>{
-      const usersList = [];
-      for(const key in responseData){
-        if(responseData.hasOwnProperty(key)){
-          usersList.push({...responseData[key], id: key})
-        }
-      }
-      return usersList;
-    }))
     .subscribe( (data: any)=>{
       // localStorage.setItem('authToken',JSON.stringify(data));
       console.log(data)

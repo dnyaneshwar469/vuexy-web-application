@@ -42,30 +42,7 @@ export class NavbarComponent implements OnInit {
       $('#mainContainer').removeClass('dark-layout');
     }
 
-    this.authService.signin()
-    .pipe(map((responseData: any) =>{
-      // const usersList = [];
-      for(const key in responseData){
-        if(responseData.hasOwnProperty(key)){
-          this.usersList.push({...responseData[key], id: key})
-        }
-      };
-      return this.usersList;
-    }))
-    .subscribe((responseData:any) => {
-        this.getUserName = responseData.find((a: any)=>{
-          this.getUserLocal = JSON.parse(localStorage.getItem('authToken')!)
-          console.log(this.getUserLocal.email)
-          if( a.email === this.getUserLocal.email && a.password === this.getUserLocal.password){
-            console.log(a.userName)
-            return a.userName;
-          }
-        });
-        console.log(responseData);
-        
-      })
-
-
+    console.log(this.getUser())
   }
 
   public items: ItemModel[] = [
@@ -96,5 +73,21 @@ export class NavbarComponent implements OnInit {
         $('#mainContainer').removeClass('light-content');
         $('#mainContainer').addClass('dark-layout');
       }
+    }
+
+    getUser(){
+      this.authService.signin()
+      .subscribe((responseData:any) => {
+        this.getUserName = responseData.find((a: any)=>{
+          this.getUserLocal = JSON.parse(localStorage.getItem('authToken')!)
+          console.log(this.getUserLocal.email)
+          if( a.email === this.getUserLocal.email && a.password === this.getUserLocal.password){
+            console.log(a.userName)
+            return a.userName;
+          }
+        });
+        console.log(this.getUserName.userName);
+        return this.getUserName.userName;
+      });
     }
 }

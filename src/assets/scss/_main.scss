@@ -59,6 +59,37 @@
 
 }
 
+.cal-week-view{
+    background-color: unset !important;
+}
+.cal-week-view .cal-hour-odd {
+    background-color: unset !important;
+}
+.cal-week-view .cal-hour:not(:last-child) .cal-hour-segment{
+    border-bottom: thin solid !important;
+}
+.cal-week-view .cal-hour .cal-hour-segment{
+    // height: 40px !important;
+    &:hover{
+        background-color: unset !important;
+    }
+}
+.cal-week-view {
+    border-top: none !important;
+    .cal-time {
+        font-weight: 300 !important;
+    }
+}
+.cal-week-view .cal-day-headers .cal-header:hover, .cal-week-view .cal-day-headers .cal-drag-over {
+    background-color: unset !important;
+}
+.cal-week-view .cal-day-headers .cal-header b{
+    font-weight: 400 !important;
+}
+.translate-popup{
+    transform: translate(0) !important;
+    transition: transform .3s ease-out;
+}
 // Dark Theme
 
 .dark-layout {
@@ -126,6 +157,30 @@
 }
 .dark-layout .month-week-day-row{
     border-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .cal-week-view .cal-hour:not(:last-child) .cal-hour-segment{
+    border-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .cal-week-view .cal-day-column {
+    border-left-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .cal-week-view .cal-day-headers .cal-header:first-child {
+    border-left-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .cal-week-view .cal-day-headers .cal-header:not(:last-child) {
+    border-right-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .cal-week-view .cal-day-headers {
+    border-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .cal-week-view .cal-time-events{
+    border-color: var(--bg-blue-v6) !important;
+}
+.dark-layout .cal-week-view .cal-header.cal-today {
+    background-color: var(--bg-blue-v1) !important;
+}
+.dark-layout .modal-header-flex{
+    background-color: var(--bg-blue-v1) !important;
 }
 // .dark-layout .auth-body{
 //     background-color: var(--bg-blue-v1);
@@ -197,6 +252,27 @@
 }
 .light-content .month-week-day-row{
     border-color: var(--color-white-v5) !important;
+}
+.light-content .cal-week-view .cal-hour:not(:last-child) .cal-hour-segment{
+    border-color: var(--color-white-v5) !important;
+}
+.light-content .cal-week-view .cal-day-column {
+    border-left-color: var(--color-white-v5) !important;
+}
+.light-content .cal-week-view .cal-day-headers .cal-header:first-child {
+    border-left-color: var(--color-white-v5) !important;
+}
+.light-content .cal-week-view .cal-day-headers .cal-header:not(:last-child) {
+    border-right-color: var(--color-white-v5) !important;
+}
+.light-content .cal-week-view .cal-day-headers {
+    border-color: var(--color-white-v5) !important;
+}
+.light-content .cal-week-view .cal-time-events{
+    border-color: var(--color-white-v5) !important;
+}
+.light-content .cal-week-view .cal-header.cal-today {
+    background-color: var(--color-white-v6);;
 }
 // .light-content .auth-body{
 //     background-color: var(--color-white-v6);
